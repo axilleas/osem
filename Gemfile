@@ -1,28 +1,29 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-#  gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass'
+# Use SCSS for stylesheets
+gem 'sass-rails'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
 
-  gem 'uglifier', '>= 1.2.2'
-end
+# Use bootstrap as the front-end framework
+gem 'bootstrap-sass'
+gem 'formtastic-bootstrap'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
 
 group :development, :test do
   gem 'pry'
   gem 'sqlite3'
   gem 'thin'
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails'
 end
 
 group :production do
@@ -30,25 +31,28 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '1.1.2'
+  gem 'capybara'
 end
 
 gem 'will_paginate'
 gem 'paperclip', '~> 3.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails'
 gem 'devise'
 gem 'cancan'
-gem "haml"
-gem 'bcrypt-ruby', '~> 3.0.0'
-#gem 'node'
-gem 'paper_trail'
-gem 'formtastic-bootstrap'
+# As long as cancan isn't compatible with rails4 we use protected_attributes
+# and config.active_record.whitelist_attributes = true
+gem 'protected_attributes'
+gem "haml-rails"
+gem 'bcrypt-ruby', '~> 3.1.1'
+gem 'paper_trail', :git => 'git://github.com/airblade/paper_trail', :branch => 'rails4'
 gem 'cocoon'
 gem 'transitions', :require => ["transitions", "active_record/transitions"]
-gem 'acts_as_commentable_with_threading'
+gem 'acts_as_commentable_with_threading', :git => 'git://github.com/petergoldstein/acts_as_commentable_with_threading.git', :branch => 'feature/rails_4'
 gem 'prawn'
 gem 'prawn_rails'
 gem 'gravtastic'
 gem 'active_model_serializers'
 gem 'axlsx_rails'
+gem 'rails-observers'
